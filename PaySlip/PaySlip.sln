@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaySlip", "PaySlip\PaySlip.csproj", "{CFB6F13C-7DE6-4BD7-8D25-CC0EBAB0F501}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaySlip.Tests", "PaySlip.Tests\PaySlip.Tests.csproj", "{3F45B3BB-B076-493B-9AFE-C88297D5C92F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CFB6F13C-7DE6-4BD7-8D25-CC0EBAB0F501}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFB6F13C-7DE6-4BD7-8D25-CC0EBAB0F501}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFB6F13C-7DE6-4BD7-8D25-CC0EBAB0F501}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFB6F13C-7DE6-4BD7-8D25-CC0EBAB0F501}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F45B3BB-B076-493B-9AFE-C88297D5C92F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F45B3BB-B076-493B-9AFE-C88297D5C92F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F45B3BB-B076-493B-9AFE-C88297D5C92F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F45B3BB-B076-493B-9AFE-C88297D5C92F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
