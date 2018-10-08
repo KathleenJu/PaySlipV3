@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace PaySlip
@@ -16,7 +17,7 @@ namespace PaySlip
         {
             var taxRateSchedule = TaxRateSchedules.First(x => annualSalary > x.MinimumTaxableIncome && annualSalary < x.MaximumTaxableIncome);
             var yearlyTax = (taxRateSchedule.ExtraTax + (annualSalary - taxRateSchedule.NonTaxableIncome)) * taxRateSchedule.TaxPerDollar;
-            return yearlyTax / 12;
+            return (int) Math.Round((double) (yearlyTax / 12));
         }
     }
 }
