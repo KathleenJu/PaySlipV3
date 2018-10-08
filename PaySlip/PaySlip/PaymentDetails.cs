@@ -1,18 +1,35 @@
-﻿namespace PaySlip.Tests
+﻿using System;
+
+namespace PaySlip
 {
     public class PaymentDetails
     {
-        public int _annualSalary { get; }
-        public int _superRate { get; }
-        public string _paymentStartDate { get; }
-        public string _paymentEndDate { get; }
+        private readonly string PaymentStartDate;
+        private readonly string PaymentEndDate;
+        
+        public int AnnualSalary { get; }
+        public int SuperRate { get; }
+        public string PaymentPeriod { get; private set; }
 
         public PaymentDetails(int annualSalary, int superRate, string paymentStartDate, string paymentEndDate)
         {
-            _annualSalary = annualSalary;
-            _superRate = superRate;
-            _paymentStartDate = paymentStartDate;
-            _paymentEndDate = paymentEndDate;
+            AnnualSalary = annualSalary;
+            SuperRate = superRate;
+            PaymentStartDate = paymentStartDate;
+            PaymentEndDate = paymentEndDate;
+            SetPaymentPeriod();
         }
+
+        private void SetPaymentPeriod()
+        {
+            PaymentPeriod = FormatDate(PaymentStartDate) + " - " + FormatDate(PaymentEndDate);
+        }
+        
+        private string FormatDate(string dayAndMonthDate)
+        {
+            var dateTime = Convert.ToDateTime(dayAndMonthDate + DateTime.Now.Year);
+            var formattedDate = dateTime.ToString("dd MMMM");
+            return formattedDate;
+        } 
     }
 }

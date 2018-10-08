@@ -1,30 +1,33 @@
-﻿using System;
+﻿using PaySlip.Tests;
 
-namespace PaySlip.Tests
+namespace PaySlip
 {
     public class Employee
     {
-        private readonly string _firstName;
-        private readonly string _lastName;
-        private readonly PaymentDetails _paymentDetails;
+        public string FirstName { get; }
+        public string LastName { get; }
+        private readonly PaymentDetails PaymentDetails;
 
         public Employee(string firstName, string lastName, PaymentDetails paymentDetails)
         {
-            _firstName = firstName;
-            _lastName = lastName;
-            _paymentDetails = paymentDetails;
+            FirstName = firstName;
+            LastName = lastName;
+            PaymentDetails = paymentDetails;
         }
 
-        public int GetMonthlySalary()
+        public int GetAnnualSalary()
         {
-            var monthlySalary = _paymentDetails._annualSalary / 12;
-            return (int) Math.Round((double) monthlySalary);
+            return PaymentDetails.AnnualSalary;
         }
 
-        public int GetMonthlySuperAnnuation()
+        public int GetSuperRate()
         {
-            var superAnnuation = GetMonthlySalary() * _paymentDetails._superRate;
-            return superAnnuation;
+            return PaymentDetails.SuperRate;
+        }
+
+        public string GetPaymentPeriod()
+        {
+            return PaymentDetails.PaymentPeriod;
         }
     }
 }
