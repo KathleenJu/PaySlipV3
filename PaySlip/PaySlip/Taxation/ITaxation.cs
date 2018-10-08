@@ -1,6 +1,6 @@
 ﻿namespace PaySlip
 {
-    public interface Taxation
+    public interface ITaxation
     {
         int GetTax(int annualSalary);
     }

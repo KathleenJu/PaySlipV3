@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace PaySlip
 {
-    public class NzTaxation : Taxation
+    public class NzTaxation : ITaxation
     {
         private readonly IEnumerable<TaxRateSchedule> TaxRateSchedules;
         

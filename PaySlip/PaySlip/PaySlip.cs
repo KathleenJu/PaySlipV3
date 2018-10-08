@@ -2,6 +2,8 @@
 {
     public class PaySlip
     {
-        
+        public PaySlip()
+        {
+        }
     }
 }
