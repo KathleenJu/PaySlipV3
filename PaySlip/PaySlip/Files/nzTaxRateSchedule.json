@@ -1,0 +1,37 @@
+﻿[
+  {
+    "MinimumTaxableIncome": 0,
+    "MaximumTaxableIncome": 18200,
+    "NonTaxableIncome": 0,
+    "TaxPerDollar": 0,
+    "ExtraTax": 0
+  },
+  {
+    "MinimumTaxableIncome": 18201,
+    "MaximumTaxableIncome": 37000,
+    "NonTaxableIncome": 18200,
+    "TaxPerDollar": 0.19,
+    "ExtraTax": 0
+  },
+  {
+    "MinimumTaxableIncome": 37001,
+    "MaximumTaxableIncome": 87000,
+    "NonTaxableIncome": 37000,
+    "TaxPerDollar": 0.325,
+    "ExtraTax": 3572
+  },
+  {
+    "MinimumTaxableIncome": 87001,
+    "MaximumTaxableIncome": 180000,
+    "NonTaxableIncome": 87000,
+    "TaxPerDollar": 0.37,
+    "ExtraTax": 19822
+  },
+  {
+    "MinimumTaxableIncome": 180001,
+    "MaximumTaxableIncome": 10000000000,
+    "NonTaxableIncome": 180000,
+    "TaxPerDollar": 0.45,
+    "ExtraTax": 54232
+  }
+]
