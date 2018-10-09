@@ -2,7 +2,7 @@
 
 namespace PaySlip.Input
 {
-    public interface IPaySlipInterface
+    public interface IPaySlipUserInterface
     {
         Dictionary<string, string> GetEmployeeDetails();
         void DisplayPaySlip(PaySlip paySlip);

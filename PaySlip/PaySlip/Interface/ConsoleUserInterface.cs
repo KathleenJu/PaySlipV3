@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace PaySlip.Input
 {
-    public class ConsoleInterface : IPaySlipInterface
+    public class ConsoleUserInterface : IPaySlipUserInterface
     {
         public Dictionary<string, string> GetEmployeeDetails(Dictionary<string, string> inputFields)
         {
