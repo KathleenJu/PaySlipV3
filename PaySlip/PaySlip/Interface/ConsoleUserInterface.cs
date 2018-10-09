@@ -21,15 +21,25 @@ namespace PaySlip.Input
             Console.Write("Please input your super rate: ");
             var superRate = Convert.ToInt32(Console.ReadLine());
             
-            Console.Write("Please input your payment start date: ");
-            var paymentStart = Console.ReadLine();
-            
-            Console.Write("Please input your payment end date: ");
-            var paymentEnd = Console.ReadLine();
-            
-            var paymentDetails = new PaymentDetails(annualSalary, superRate, paymentStart, paymentEnd);
+            var paymentDetails = new SalaryDetails(annualSalary, superRate);
 
             return new Employee(fname, lname, paymentDetails);
+        }
+
+        public string GetPaymentStartDate()
+        {
+            Console.Write("Please input your payment start date: ");
+            var paymentStart = Console.ReadLine();
+
+            return paymentStart;
+        }
+
+        public string GetPaymentEndDate()
+        {
+            Console.Write("Please input your payment end date: ");
+            var paymentEnd = Console.ReadLine();
+
+            return paymentEnd;
         }
 
         public void DisplayPaySlip(PaySlip paySlip)

@@ -7,13 +7,13 @@ namespace PaySlip
         public string FirstName { get; }
         public string LastName { get; }
         
-        private readonly PaymentDetails PaymentDetails;
+        private readonly SalaryDetails _salaryDetails;
 
-        public Employee(string firstName, string lastName, PaymentDetails paymentDetails)
+        public Employee(string firstName, string lastName, SalaryDetails salaryDetails)
         {
             FirstName = firstName;
             LastName = lastName;
-            PaymentDetails = paymentDetails;
+            _salaryDetails = salaryDetails;
         }
 
         public string GetFullName()
@@ -22,9 +22,9 @@ namespace PaySlip
             return CultureTextInfo.ToTitleCase(FirstName + " " + LastName);
         }
 
-        public PaySlip GetMonthlyPaySlip(ITaxRateSchedule taxRateSchedule)
+        public PaySlip GetMonthlyPaySlip(string paymentStart, string paymentEnd, ITaxRateSchedule taxRateSchedule)
         {
-            return new PaySlip(GetFullName(), PaymentDetails.GetPaymentPeriod(), PaymentDetails.AnnualSalary, PaymentDetails.GetGrossIncome(), PaymentDetails.GetSuperAnnuation(), taxRateSchedule);
+            return new PaySlip(GetFullName(), paymentStart, paymentEnd, _salaryDetails.AnnualSalary, _salaryDetails.GetGrossIncome(), _salaryDetails.GetSuperAnnuation(), taxRateSchedule);
         }
         
     }

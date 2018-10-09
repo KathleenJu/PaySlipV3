@@ -9,7 +9,7 @@ namespace PaySlip.Tests
         [Fact]
         public void GivenTheFirstNameIsJohnAndLastNameIsDoe_WhenFullNameIsGenerated_ThenFullNameShouldBeJohnDoeInCapital()
         {
-            var emp = new Employee("john", "doe", It.IsAny<PaymentDetails>());
+            var emp = new Employee("john", "doe", It.IsAny<SalaryDetails>());
             const string expectedEmpFullName = "John Doe";
             var actualEmpFullName = emp.GetFullName();
             
