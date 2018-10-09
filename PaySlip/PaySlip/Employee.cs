@@ -1,4 +1,5 @@
-﻿using PaySlip.Tests;
+﻿using System.Globalization;
+using PaySlip.Tests;
 
 namespace PaySlip
 {
@@ -15,14 +16,24 @@ namespace PaySlip
             PaymentDetails = paymentDetails;
         }
 
+        public string GetFullName()
+        {
+            return ToCapitalise(FirstName + " " + LastName);
+        }
+
+        private string ToCapitalise(string name)
+        {
+            return CultureInfo.CurrentCulture.TextInfo.ToTitleCase(name);
+        }
+        
         public int GetAnnualSalary()
         {
             return PaymentDetails.AnnualSalary;
         }
 
-        public int GetSuperRate()
+        public int GetSuperAnnuation()
         {
-            return PaymentDetails.SuperRate;
+            return PaymentDetails.GetSuperAnnuation();
         }
 
         public string GetPaymentPeriod()
