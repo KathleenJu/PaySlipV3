@@ -13,24 +13,24 @@ namespace PaySlip
         public int Super { get; }
 
         private readonly int AnnualSalary;
-        public ITaxation _taxation;
+        public ITaxRateSchedule TaxRateSchedule;
 
         public PaySlip(string name, string paymentPeriod, int annualSalary, int grossIncome, int superAnnuation,
-            ITaxation taxation)
+            ITaxRateSchedule taxRateSchedule)
         {
             FullName = name;
             PaymentPeriod = paymentPeriod;
             AnnualSalary = annualSalary;
             GrossIncome = grossIncome;
             Super = superAnnuation;
-            _taxation = taxation;
+            TaxRateSchedule = taxRateSchedule;
             IncomeTax = GetIncomeTax();
             NetIncome = GetNetIncome();
         }
 
         public int GetIncomeTax()
         {
-            var incomeTax = _taxation.GetTax(AnnualSalary);
+            var incomeTax = TaxRateSchedule.GetTax(AnnualSalary);
             return incomeTax;
         }
 

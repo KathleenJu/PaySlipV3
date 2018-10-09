@@ -22,9 +22,9 @@ namespace PaySlip
             return CultureTextInfo.ToTitleCase(FirstName + " " + LastName);
         }
 
-        public PaySlip GetMonthlyPaySlip(ITaxation taxation)
+        public PaySlip GetMonthlyPaySlip(ITaxRateSchedule taxRateSchedule)
         {
-            return new PaySlip(GetFullName(), PaymentDetails.GetPaymentPeriod(), PaymentDetails.AnnualSalary, PaymentDetails.GetGrossIncome(), PaymentDetails.GetSuperAnnuation(), taxation);
+            return new PaySlip(GetFullName(), PaymentDetails.GetPaymentPeriod(), PaymentDetails.AnnualSalary, PaymentDetails.GetGrossIncome(), PaymentDetails.GetSuperAnnuation(), taxRateSchedule);
         }
         
     }
