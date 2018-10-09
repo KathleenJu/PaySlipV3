@@ -1,0 +1,8 @@
+﻿{
+    "FirstName":    "Please input your name:",
+    "LastName": "Please input your surname: ",
+    "AnnunalSalary": "Please enter your annual salary: ",
+    "SuperRate": "Please enter your super rate: ",
+    "PaymentStartDate": "Please enter your payment start date: ",
+    "PaymentEndDate": "Please enter your payment end date: "
+}

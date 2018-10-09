@@ -1,0 +1,8 @@
+﻿{
+  "name": "Name",
+  "payPeriod": "Pay Period",
+  "grossIncome": "Gross Income",
+  "incomeTax" : "Income Tax",
+  "netIncome" : "Net Income",
+  "super" : "Super"
+}
