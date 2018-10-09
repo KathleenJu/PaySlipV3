@@ -34,15 +34,16 @@ namespace PaySlip
 
         public int GetGrossIncome()
         {
-            var monthlySalary = AnnualSalary / 12;
-            return (int) Math.Round((double) monthlySalary);
+            const int monthsInAYear = 12;
+            var monthlySalary = AnnualSalary / monthsInAYear;
+            return (int) Math.Round((decimal) monthlySalary);
         }
 
         public int GetSuperAnnuation()
         {
             var superRateDecimal = (double) SuperRate / 100;
             var superAnnuation = GetGrossIncome() * superRateDecimal;
-            return (int) superAnnuation;
+            return (int) Math.Round(superAnnuation);
         }
     }
 }

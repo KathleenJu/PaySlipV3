@@ -17,7 +17,7 @@ namespace PaySlip
         {
             var taxRateSchedule = TaxRateSchedules.First(x => annualSalary > x.MinimumTaxableIncome && annualSalary < x.MaximumTaxableIncome);
             var yearlyTax = taxRateSchedule.ExtraTax + (annualSalary - taxRateSchedule.NonTaxableIncome) * taxRateSchedule.TaxPerDollar ;
-            return (int) Math.Round((double) (yearlyTax / 12));
+            return (int) Math.Round(yearlyTax / 12);
         }
     }
 }
