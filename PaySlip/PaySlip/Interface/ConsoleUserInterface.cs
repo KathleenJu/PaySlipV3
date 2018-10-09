@@ -3,11 +3,11 @@ using System.Collections.Generic;
 
 namespace PaySlip.Input
 {
-    public class ConsoleUserInterface : IPaySlipUserInterface
+    class ConsoleUserInterface : IPaySlipUserInterface
     {
         public Employee GetEmployeeDetails()
         {
-            Console.WriteLine("Welcome to the payslip generator!");
+            Console.WriteLine("Welcome to the payslip generator!\n");
             
             Console.Write("Please input your name: ");
             var fname = Console.ReadLine();
@@ -34,16 +34,16 @@ namespace PaySlip.Input
 
         public void DisplayPaySlip(PaySlip paySlip)
         {
-            Console.WriteLine("Your payslip has been generated: ");
+            Console.WriteLine("\nYour payslip has been generated: \n");
             
-            Console.WriteLine("Name :" + paySlip.FullName);
-            Console.WriteLine("Pay Period :" + paySlip.PaymentPeriod);
-            Console.WriteLine("Gross Income :" + paySlip.GrossIncome);
-            Console.WriteLine("Income Tax :" + paySlip.IncomeTax);
-            Console.WriteLine("Net Income :" + paySlip.NetIncome);
-            Console.WriteLine("Super :" + paySlip.Super);
+            Console.WriteLine("Name: " + paySlip.FullName);
+            Console.WriteLine("Pay Period: " + paySlip.PaymentPeriod);
+            Console.WriteLine("Gross Income: " + paySlip.GrossIncome);
+            Console.WriteLine("Income Tax: " + paySlip.IncomeTax);
+            Console.WriteLine("Net Income: " + paySlip.NetIncome);
+            Console.WriteLine("Super: " + paySlip.Super);
             
-            Console.WriteLine("Thank you for using MYOB!");
+            Console.WriteLine("\nThank you for using MYOB!\n");
             
         }
     }

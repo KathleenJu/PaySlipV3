@@ -28,7 +28,7 @@ namespace PaySlip
             NetIncome = GetNetIncome();
         }
 
-        public int GetIncomeTax()
+        private int GetIncomeTax()
         {
             var incomeTax = TaxRateSchedule.GetTax(AnnualSalary);
             return incomeTax;

@@ -6,9 +6,9 @@ namespace PaySlip
 {
     public class NzTaxRateSchedule : ITaxRateSchedule
     {
-        private readonly IEnumerable<TaxRateSchedule> TaxBrackets;
+        private readonly IEnumerable<TaxBracket> TaxBrackets;
         
-        public NzTaxRateSchedule(IEnumerable<TaxRateSchedule> taxBrackets)
+        public NzTaxRateSchedule(IEnumerable<TaxBracket> taxBrackets)
         {
             TaxBrackets = taxBrackets;
         }
@@ -20,7 +20,7 @@ namespace PaySlip
             return (int) Math.Round(yearlyTax / 12);
         }
 
-        private TaxRateSchedule GetTaxBracketOfAnnualSalary(int annualSalary)
+        private TaxBracket GetTaxBracketOfAnnualSalary(int annualSalary)
         {
             return TaxBrackets.First(tb => annualSalary > tb.MinimumTaxableIncome && annualSalary < tb.MaximumTaxableIncome);
         }

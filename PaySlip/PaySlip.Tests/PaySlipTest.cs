@@ -9,7 +9,7 @@ namespace PaySlip.Tests
         [Fact]
         public void GivenThatMonthlySalaryIsFiveThousand_WhenIncomeTaxIsCalculated_ThenIncomeTaxIsNineHundredAndTwentyOne()
         {
-            var taxRateSchedules = new List<TaxRateSchedule>{new TaxRateSchedule(37001, 87000, 37000, 0.325, 3572)};
+            var taxRateSchedules = new List<TaxBracket>{new TaxBracket(37001, 87000, 37000, 0.325, 3572)};
             var nzTaxation = new NzTaxRateSchedule(taxRateSchedules);
             var paySlip = new PaySlip(It.IsAny<string>(), It.IsAny<string>(), 60000, It.IsAny<int>(), It.IsAny<int>(), nzTaxation);
                 
@@ -22,7 +22,7 @@ namespace PaySlip.Tests
         [Fact]
         public void GivenThatMonthlySalaryIsNinetyThousand_WhenIncomeTaxIsCalculated_ThenIncomeTaxIsOneThousandFortyFour()
         {
-            var taxRateSchedules = new List<TaxRateSchedule>{new TaxRateSchedule(87001, 180000, 87000, 0.37, 19822)};
+            var taxRateSchedules = new List<TaxBracket>{new TaxBracket(87001, 180000, 87000, 0.37, 19822)};
             var nzTaxation = new NzTaxRateSchedule(taxRateSchedules);
             var paySlip = new PaySlip(It.IsAny<string>(), It.IsAny<string>(), 90000, It.IsAny<int>(), It.IsAny<int>(), nzTaxation);
                 

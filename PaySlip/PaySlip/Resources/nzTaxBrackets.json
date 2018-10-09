@@ -29,7 +29,7 @@
   },
   {
     "MinimumTaxableIncome": 180001,
-    "MaximumTaxableIncome": 10000000000,
+    "MaximumTaxableIncome": 100000000,
     "NonTaxableIncome": 180000,
     "TaxPerDollar": 0.45,
     "ExtraTax": 54232
