@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace PaySlip
 {
@@ -9,7 +10,6 @@ namespace PaySlip
         
         public int AnnualSalary { get; }
         public int SuperRate { get; }
-        public string PaymentPeriod { get; private set; }
 
         public PaymentDetails(int annualSalary, int superRate, string paymentStartDate, string paymentEndDate)
         {
@@ -17,19 +17,32 @@ namespace PaySlip
             SuperRate = superRate;
             PaymentStartDate = paymentStartDate;
             PaymentEndDate = paymentEndDate;
-            SetPaymentPeriod();
         }
 
-        private void SetPaymentPeriod()
+        public string GetPaymentPeriod()
         {
-            PaymentPeriod = FormatDate(PaymentStartDate) + " - " + FormatDate(PaymentEndDate);
+            var paymentPeriod = FormatDate(PaymentStartDate) + " - " + FormatDate(PaymentEndDate);
+            return paymentPeriod;
         }
-        
+
         private string FormatDate(string dayAndMonthDate)
         {
             var dateTime = Convert.ToDateTime(dayAndMonthDate + DateTime.Now.Year);
             var formattedDate = dateTime.ToString("dd MMMM");
             return formattedDate;
-        } 
+        }
+
+        public int GetGrossIncome()
+        {
+            var monthlySalary = AnnualSalary / 12;
+            return (int) Math.Round((double) monthlySalary);
+        }
+
+        public int GetSuperAnnuation()
+        {
+            var superRateDecimal = (double) SuperRate / 100;
+            var superAnnuation = GetGrossIncome() * superRateDecimal;
+            return (int) superAnnuation;
+        }
     }
 }

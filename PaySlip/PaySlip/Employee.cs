@@ -27,7 +27,7 @@ namespace PaySlip
 
         public string GetPaymentPeriod()
         {
-            return PaymentDetails.PaymentPeriod;
+            return PaymentDetails.GetPaymentPeriod();
         }
     }
 }
