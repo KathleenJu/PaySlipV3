@@ -7,17 +7,17 @@ namespace PaySlip
     {
         private static void Main(string[] args)
         {
-            var ui = new ConsoleUserInterface();
-            var employee = ui.GetEmployeeDetails();
+            var userInterface = new ConsoleUserInterface();
+            var employee = userInterface.GetEmployeeDetails();
 
-            const string taxBracketsFilePath = "/Users/kathleen.jumamoy/Projects/PaySlipV3/PaySlip/PaySlip/Resources/nzTaxBrackets.json";
+            const string taxBracketsFilePath = "./Resources/nzTaxBrackets.json";
             var taxBracketsReader = new JSONTaxBracketsFileReader(taxBracketsFilePath);
-            var taxBrackets = taxBracketsReader.GeTaxBrackets();
+            var taxBrackets = taxBracketsReader.GetTaxBrackets();
                 
             var nzTaxRateSchedule = new NzTaxRateSchedule(taxBrackets);
             var empPaySlip = employee.GetMonthlyPaySlip(nzTaxRateSchedule);
             
-            ui.DisplayPaySlip(empPaySlip);
+            userInterface.DisplayPaySlip(empPaySlip);
         }
     }
 }

@@ -13,7 +13,7 @@ namespace PaySlip
             TaxBrackets = taxBrackets;
         }
         
-        public int GetTax(int annualSalary)
+        public int GetIncomeTax(int annualSalary)
         {
             var taxBracketOfAnnualSalary = GetTaxBracketOfAnnualSalary(annualSalary);
             var yearlyTax = taxBracketOfAnnualSalary.ExtraTax + (annualSalary - taxBracketOfAnnualSalary.NonTaxableIncome) * taxBracketOfAnnualSalary.TaxPerDollar ;

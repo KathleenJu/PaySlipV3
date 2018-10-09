@@ -25,7 +25,7 @@ namespace PaySlip
 
         private int GetIncomeTax(int annualSalary, ITaxRateSchedule taxRateSchedule)
         {
-            var incomeTax = taxRateSchedule.GetTax(annualSalary);
+            var incomeTax = taxRateSchedule.GetIncomeTax(annualSalary);
             return incomeTax;
         }
 

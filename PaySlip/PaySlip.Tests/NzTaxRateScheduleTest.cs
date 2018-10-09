@@ -14,7 +14,7 @@ namespace PaySlip.Tests
             const int annualSalary = 60000;
 
             const int expectedIncomeTax = 921;
-            var actualIncomeTax = nzTaxRateSchedule.GetTax(annualSalary);
+            var actualIncomeTax = nzTaxRateSchedule.GetIncomeTax(annualSalary);
             
             Assert.Equal(expectedIncomeTax, actualIncomeTax);
         }
@@ -27,7 +27,7 @@ namespace PaySlip.Tests
             const int annualSalary = 90000;
                 
             const int expectedIncomeTax = 1744;
-            var actualIncomeTax = nzTaxRateSchedule.GetTax(annualSalary);
+            var actualIncomeTax = nzTaxRateSchedule.GetIncomeTax(annualSalary);
             
             Assert.Equal(expectedIncomeTax, actualIncomeTax);
         }

@@ -2,6 +2,6 @@
 {
     public interface ITaxRateSchedule
     {
-        int GetTax(int annualSalary);
+        int GetIncomeTax(int annualSalary);
     }
 }

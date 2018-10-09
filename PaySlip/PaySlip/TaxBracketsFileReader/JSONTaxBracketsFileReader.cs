@@ -19,7 +19,7 @@ namespace PaySlip
             _fileContent = File.ReadAllText(filePath);
         }
 
-        public List<TaxBracket> GeTaxBrackets()
+        public List<TaxBracket> GetTaxBrackets()
         {
             var taxBracketList = JsonConvert.DeserializeObject<List<TaxBracket>>(_fileContent);
             return taxBracketList;
